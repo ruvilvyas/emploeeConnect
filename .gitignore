@@ -1,0 +1,11 @@
+# Ignore environment files
+.env.local
+
+# Ignore Next.js build files
+.next/
+
+# Ignore dependencies
+node_modules/
+
+# Ignore system files
+.DS_Store
