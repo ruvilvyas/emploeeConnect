@@ -1,52 +1,43 @@
 'use client';
 
 import React from 'react';
+import { signIn } from 'next-auth/react';
 import Link from 'next/link';
 
-const Navbar = () => {
+export default function Navbar() {
   return (
-    <nav className="bg-white shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
-          <div className="flex">
-            <div className="flex-shrink-0 flex items-center">
-              <Link href="/" className="text-2xl font-bold text-blue-600">
-                Employee Connekt
-              </Link>
-            </div>
-            <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
-              <Link
-                href="/forum"
-                className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
-              >
-                Forum
-              </Link>
-              <Link
-                href="/interviews"
-                className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
-              >
-                Interviews
-              </Link>
-              <Link
-                href="/help"
-                className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
-              >
-                Help Requests
-              </Link>
-            </div>
-          </div>
-          <div className="hidden sm:ml-6 sm:flex sm:items-center">
-            <Link
-              href="/auth/signin"
-              className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700"
-            >
-              Sign In
+    <nav className="bg-white shadow-md">
+      <div className="container mx-auto px-4">
+        <div className="flex justify-between items-center h-16">
+          <Link href="/" className="text-xl font-bold text-blue-600">
+            Employee Connekt
+          </Link>
+          
+          <div className="flex space-x-6">
+            <Link href="/" className="text-gray-700 hover:text-blue-600">
+              Home
+            </Link>
+            <Link href="/networking" className="text-gray-700 hover:text-blue-600">
+              Network
+            </Link>
+            <Link href="/ai-assistant" className="text-gray-700 hover:text-blue-600 flex items-center">
+              <span>AI Assistant</span>
+              <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </Link>
+            <Link href="/forum" className="text-gray-700 hover:text-blue-600">
+              Forum
+            </Link>
+            <Link href="/interviews" className="text-gray-700 hover:text-blue-600">
+              Interviews
+            </Link>
+            <Link href="/help" className="text-gray-700 hover:text-blue-600">
+              Help
             </Link>
           </div>
         </div>
       </div>
     </nav>
   );
-};
-
-export default Navbar; 
+} 
